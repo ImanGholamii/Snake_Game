@@ -6,8 +6,7 @@ class Food(Turtle):
     for x in range(-280, 280, 2):
         for y in range(-280, 260, 2):
             coordinates.append((x, y))
-    random_cor = choice(coordinates)
-    print(random_cor)
+
 
     def __init__(self):
         super().__init__()
@@ -16,4 +15,7 @@ class Food(Turtle):
         self.shape("circle")
         self.shapesize(stretch_wid=0.49, stretch_len=0.49)
         self.speed("fastest")
-        self.goto(self.random_cor)
+
+    def refresh(self):
+        random_cor = choice(self.coordinates)
+        self.goto(random_cor)
