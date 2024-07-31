@@ -16,6 +16,8 @@ class Score(Turtle):
         self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONT)
 
     def game_over(self):
+        self.teleport(x=0, y=0)
+        self.color("light pink")
         self.write(f"GAME OVER", align=ALIGNMENT, font=FONT)
 
     def add_score(self):
