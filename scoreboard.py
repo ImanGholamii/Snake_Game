@@ -11,6 +11,7 @@ class Score(Turtle):
         self.color("white")
         self.hideturtle()
         self.teleport(x=0, y=283)
+        self.update_score()
 
     def update_score(self):
         self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONT)
