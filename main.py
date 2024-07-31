@@ -36,7 +36,7 @@ while game_is_on:
     sleep(0.1)  # refresh the page every 1 seconds
 
     snake.move()
-    if snake.head.distance(food) < 15:
+    if snake.head.distance(food) <= 10:
         food.refresh()
 
 
