@@ -26,23 +26,23 @@ class Snake:
         for seg_num in range(len(self.snake_segments) - 1, 0, -1):
             new_x = self.snake_segments[seg_num - 1].xcor()
             new_y = self.snake_segments[seg_num - 1].ycor()
-            print(seg_num - 1, new_x, new_y)
+            # print(seg_num - 1, new_x, new_y)
             self.snake_segments[seg_num].goto(new_x, new_y)
-        self.snake_segments[0].fd(MOVE_DISTANCE)
-        print(self.head.heading())
+        self.head.fd(MOVE_DISTANCE)
+        # print(self.head.heading())
 
     def move_up(self):
         if self.head.heading() != DOWN:
-            self.head.setheading(90)
+            self.head.setheading(UP)
 
     def move_left(self):
         if self.head.heading() != RIGHT:
-            self.head.setheading(180)
+            self.head.setheading(LEFT)
 
     def move_down(self):
         if self.head.heading() != UP:
-            self.head.setheading(270)
+            self.head.setheading(DOWN)
 
     def move_right(self):
         if self.head.heading() != LEFT:
-            self.head.setheading(0)
+            self.head.setheading(RIGHT)
