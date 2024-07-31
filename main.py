@@ -19,13 +19,6 @@ t_obj.hideturtle()
 t_obj.teleport(x=0, y=260)
 t_obj.write(f"Score: {score}", align="center", font=("Courier", 20, 'bold'))
 
-# Food
-food.shape('circle')
-food.color('gold')
-food.penup()
-food.shapesize(0.5)
-food.goto((0, 50))
-
 snake = Snake()
 
 # # Keys
