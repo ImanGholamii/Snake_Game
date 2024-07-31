@@ -3,8 +3,8 @@ from random import choice
 
 class Food(Turtle):
     coordinates = []
-    for x in range(-280, 280, 2):
-        for y in range(-280, 260, 2):
+    for x in range(-278, 278, 1):
+        for y in range(-278, 260, 1):
             coordinates.append((x, y))
 
 
