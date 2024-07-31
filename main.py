@@ -2,6 +2,7 @@ from turtle import Turtle, Screen
 from time import sleep
 from snake import Snake
 from food import Food
+from scoreboard import Score
 
 # Screen configs
 screen = Screen()
@@ -12,16 +13,10 @@ screen.tracer(0)
 
 t_obj = Turtle()
 
-# background
-score = 0
-t_obj.color("white")
-t_obj.hideturtle()
-t_obj.teleport(x=0, y=283)
-t_obj.write(f"Score: {score}", align="center", font=("Courier", 20, 'bold'))
-
 # imported module objects
 snake = Snake()
 food = Food()
+score = Score()
 
 # # Keys
 screen.listen()
@@ -36,8 +31,12 @@ while game_is_on:
     sleep(0.1)  # refresh the page every 1 seconds
 
     snake.move()
+
     if snake.head.distance(food) <= 10:
         food.refresh()
+        score.add_score()
 
+    if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 282 or snake.head.ycor() < -286:
+        game_is_on = False
 
 screen.exitonclick()
