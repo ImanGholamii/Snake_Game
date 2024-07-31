@@ -15,6 +15,7 @@ class Food(Turtle):
         self.shape("circle")
         self.shapesize(stretch_wid=0.49, stretch_len=0.49)
         self.speed("fastest")
+        self.refresh()
 
     def refresh(self):
         random_cor = choice(self.coordinates)
