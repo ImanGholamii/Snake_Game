@@ -7,6 +7,7 @@ LEFT = 180
 DOWN = 270
 RIGHT = 0
 
+
 class Snake:
     def __init__(self):
         self.snake_segments = []
@@ -19,7 +20,6 @@ class Snake:
             self.add_segment()
             self.snake_segments[index].goto(position)
             index += 1
-
 
     def add_segment(self):
         new_segment = Turtle()
@@ -55,3 +55,10 @@ class Snake:
     def move_right(self):
         if self.head.heading() != LEFT:
             self.head.setheading(RIGHT)
+
+    def reset(self):
+        for seg in self.snake_segments:
+            seg.goto(1000, 0)
+        self.snake_segments.clear()
+        self.create_snake()
+        self.head = self.snake_segments[0]
