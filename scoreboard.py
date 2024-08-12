@@ -2,15 +2,15 @@ from turtle import Turtle
 
 ALIGNMENT = "center"
 FONT = ("Courier", 20, "normal")
-with open("data.txt") as f:
-    high_score = f.read()
+
 
 
 class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
-        self.high_score = int(high_score)
+        with open("data.txt") as data:
+            self.high_score = int(data.read())
         self.color("white")
         self.hideturtle()
         self.teleport(x=0, y=283)
@@ -23,8 +23,8 @@ class Score(Turtle):
     def reset(self):
         if self.score > self.high_score:
             self.high_score = self.score
-            with open("data.txt", "w") as file:
-                file.write(str(self.score))
+            with open("data.txt", mode="w") as new_data:
+                new_data.write(str(self.high_score))
         self.score = 0
         self.update_score()
 
