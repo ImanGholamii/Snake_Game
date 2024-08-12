@@ -8,6 +8,7 @@ class Score(Turtle):
     def __init__(self):
         super().__init__()
         self.score = 0
+        self.high_score = 0
         self.color("white")
         self.hideturtle()
         self.teleport(x=0, y=283)
@@ -23,5 +24,4 @@ class Score(Turtle):
 
     def add_score(self):
         self.score += 1
-        self.clear()
         self.update_score()
